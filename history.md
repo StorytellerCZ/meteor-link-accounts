@@ -1,6 +1,8 @@
 v. Next
 ======
 
+* Wattpad support
+
 v 1.2.0
 =======
 * unlink accounts

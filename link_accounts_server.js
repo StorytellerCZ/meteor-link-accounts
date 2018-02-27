@@ -84,7 +84,7 @@ Accounts.unlinkService = function (userId, serviceName, cb) {
   }
   var user = Meteor.users.findOne({_id: userId});
   if (serviceName === 'resume' || serviceName === 'password') {
-    throw new Meteor.Error('Interal services cannot be unlinked: ' + serviceName);
+    throw new Meteor.Error('Internal services cannot be unlinked: ' + serviceName);
   }
 
   if (user.services[serviceName]) {
