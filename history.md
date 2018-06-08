@@ -1,5 +1,6 @@
 v. Next
 ======
+* LINE support
 
 * Wattpad support
 
