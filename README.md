@@ -1,20 +1,31 @@
 # Meteor Link Accounts
-A Meteor package designed to links social network accounts without any hassles.
 
-## Next Steps
-* Look into work with Apollo (graphQL)
-* Look into merge into meteor/accounts.
-* Update to be more open and catch up to current state of Javascript
+[![Project Status: Active – The project has reached a stable, usable state and is being actively developed.](https://www.repostatus.org/badges/latest/active.svg)](https://www.repostatus.org/#active)
+
+A [Meteor package](https://atmospherejs.com/bozhao/link-accounts) designed to links social network accounts without any hassles.
 
 ## Goals
 * Link additional social network accounts.
 * Don't modify any Meteor core packages.
-* Don't force users to add additional Meteor packages that they are not going to
-  use.
+* Don't force users to add additional Meteor packages that they are not going to use.
+
+## Install
+Install in Meteor with:
+
+```bash
+meteor add bozhao:link-accounts
+```
 
 ## Usage
-* Call Meteor.linkWith[ServiceName] in place instead of loginWith.  (client side)
-* For unlink, Use Accounts.unlinkService(userId, serviceName).  (server side)
+### Client side
+#### Meteor.linkWith[ServiceName](options, callback)
+You will call this on the page where you allow your users to connect to other services. This method will be triggered after they click the appropriate connect button.
+
+`options` is expecting configuration object. Most often that is going to be: `{ loginStyle: 'popup' }`
+
+### Server side
+#### Accounts.unlinkService(userId, serviceName)
+Given the `userId` and the name of the service (`serviceName`) as it is named in the user document (most often lower case name of the service).
 
 ## Design notes:
 1. Piggyback on existing Meteor oauth login system. Use login handler.
@@ -44,7 +55,7 @@ A Meteor package designed to links social network accounts without any hassles.
 * mrt:accounts-vk
 * mikepol:accounts-ok
 * mikepol:accounts-mailru
-* jonperl:accounts-linkedin
+* jonperl:accounts-linkedin (depracated) / pauli:linkedin-oauth
 * garbolino:accounts-soundcloud
 * alexbeauchemin:accounts-twitch
 * nicolaiwadstrom:meteor-angellist
